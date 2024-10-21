@@ -37,30 +37,27 @@ let playerList = [
 ];
 console.log(playerList[1].favorites[1]);
 
-console.log((playerList[0].age + playerList[1].age + playerList[2].age) / 3);
-
 //Q5
+let total = playerList.reduce((total, player) => total + player.age, 0);
+let average = total / playerList.length;
+
+console.log(average);
+
+//Q6
 function sayHello() {
   console.log('Hello');
 }
 sayHello();
 
-//Q6
 const sayWorld = function() {
   console.log('World');
 }
 sayWorld();
 
 //Q7
-user = {
-  name: 'John',
-  age: 26,
-  bloodType: 'A',
-  favorite: 'card',
-  birthday: '2000-09-27',
-  sayHello: function() {
-    console.log('Hello!');
-  }
+user.birthday = '2000-09-27';
+user.sayHello = function() {
+  console.log("Hello!");
 };
 user.sayHello();
 
@@ -71,10 +68,18 @@ let calc = {
   },
   subtract: function(x, y) {
     console.log(x - y);
+  },
+  multiply: function(x, y) {
+    console.log(x * y);
+  },
+  divide: function(x, y) {
+    console.log(x / y);
   }
 };
 calc.add(3, 4);
 calc.subtract(11, 1);
+calc.multiply(7, 7);
+calc.divide(10, 2);
 
 //Q9
 function remainder(x, y) {
@@ -107,17 +112,18 @@ function Distribute(num) {
     console.log('num is 0');
   }
 };
+Distribute(1);
 
 //Q4
 let numbers = [];
-for (let i = 0; i < 99; i++) {
-  numbers [i] = i+1;
+for (let i = 0; i < 100; i++) {
+  numbers [i] = i;
 };
 console.log(numbers);
 
 //Q5
 let mixed = [4, '2', 5, '8', '9', 0, 1];
-for (let i = 0; i < 7; i++) {
+for (let i = 0; i < mixed.length; i++) {
   if (typeof mixed[i] !== 'number') {
     console.log('not number');
   } else if (mixed[i] % 2 === 0) {
